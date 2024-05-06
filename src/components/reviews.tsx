@@ -50,12 +50,11 @@ function Review({ imgSrc, className, ...props }: ReviewProps) {
     ]
 
     return (
-        <div {...props}
-            className={cn(
+        <div style={{ animationDelay }}
+            className={cn(className,
                 'animate-fade-in rounded-[2.25rem] bg-white p-6 opacity-0 shadow-xl shadow-slate-900/5',
-                className
             )}
-            style={{ animationDelay }}>
+            {...props}>
             <Phone imgSrc={imgSrc} />
         </div>
     )
@@ -148,10 +147,10 @@ function ReviewGrid() {
 
 export default function Reviews() {
     return (
-        <MaxWidthWrapper>
+        <MaxWidthWrapper className='relative max-w-5xl'>
             <img src='/what-people-are-buying.png'
                 alt='what people buy'
-                className='absolute select-none hidden xl:block -left-32 top-1/3' />
+                className='absolute select-none hidden xl:block -left-32 top-[10%]' />
             <ReviewGrid />
         </MaxWidthWrapper>
     )
